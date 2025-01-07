@@ -7,14 +7,9 @@
       url="github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -27,8 +22,6 @@
 	  ./configuration.nix
 	  ./hosts/${hostname}/hardware-configuration.nix
 	  ./modules/defaults
-
-	  nvf.nixosModules.default
 
 	  home-manager.nixosModules.home-manager
 	  {

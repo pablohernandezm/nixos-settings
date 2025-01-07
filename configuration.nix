@@ -67,6 +67,12 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      home-manager
+     gcc
+     gnumake
+     cargo
+     zig
+     nodejs_23
+     python314
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
