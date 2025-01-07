@@ -31,8 +31,9 @@
     };
   };
 
-  home.packages = [
-    pkgs.gh
+  home.packages = with pkgs; [
+    gh
+    ghostty
   ];
 
 

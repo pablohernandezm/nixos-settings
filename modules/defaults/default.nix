@@ -2,5 +2,7 @@
 {
   imports = [
     ./neovim.nix
+    ./hyprland.nix
+    ./brave.nix
   ];
 }
