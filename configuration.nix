@@ -11,7 +11,7 @@
   #   ];
 
   # Flake
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -57,7 +57,7 @@
     isNormalUser = true;
     description = "Pablo Hernández";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -66,13 +66,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     home-manager
-     gcc
-     gnumake
-     cargo
-     zig
-     nodejs_23
-     python314
+    home-manager
+    gcc
+    gnumake
+    cargo
+    zig
+    nodejs_23
+    python314
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
