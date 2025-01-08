@@ -46,12 +46,6 @@
     LC_TIME = "es_CO.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "altgr-intl";
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pabloh = {
     isNormalUser = true;
@@ -74,6 +68,13 @@
     nodejs_23
     python314
   ];
+
+  # # Configure keymap in X11
+  # services.xserver.xkb = {
+  #   layout = "us";
+  #   variant = "altgr-intl";
+  # };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

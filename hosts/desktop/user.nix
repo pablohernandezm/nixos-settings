@@ -16,7 +16,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       credential.helper = "store";
-      merge.conflictstyle =  "diff3";
+      merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
     };
 
@@ -36,14 +36,41 @@
     ghostty
   ];
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.rose-pine-cursor;
+    name = "Rose Pine";
+    size = 16;
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.rose-pine-gtk-theme;
+      name = "rose-pine";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    font = {
+      name = "Sans";
+      size = 11;
+    };
+  };
 
   home.activation = {
-    directlink = lib.hm.dag.entryAfter [ "writeBoundary" ] (''
-      if [[ ! -e  ~/.config/nvim ]]; then
-        run mkdir ~/.config/nvim
-        run ${pkgs.git}/bin/git clone https://github.com/pablohernandezm/dot-nvim ~/.config/nvim
-      fi
-    '');
+    directlink = lib.hm.dag.entryAfter [ "writeBoundary" ] (
+      ''
+        if [[ ! -e  ~/.config/nvim ]]; then
+          run mkdir ~/.config/nvim
+          run ${pkgs.git}/bin/git clone https://github.com/pablohernandezm/dot-nvim ~/.config/nvim
+        fi
+      ''
+    );
   };
 
   programs.home-manager.enable = true;
