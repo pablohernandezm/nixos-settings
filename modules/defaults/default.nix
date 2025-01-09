@@ -2,7 +2,7 @@
 {
   imports = [
     ./neovim.nix
-    ./hyprland.nix
+    ./hyprland
     ./brave.nix
     ./wl-clipboard.nix
     ./mako.nix

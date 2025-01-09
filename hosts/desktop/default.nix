@@ -1,11 +1,19 @@
 { pkgs, config, lib, ... }:
 
 {
+
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  imports = [ ./theme.nix ];
+
+  home.packages = with pkgs; [
+    gh
+    ghostty
+  ];
 
   programs.git = {
     enable = true;
@@ -28,37 +36,6 @@
         diff-so-fancy = true;
         navigate = true;
       };
-    };
-  };
-
-  home.packages = with pkgs; [
-    gh
-    ghostty
-  ];
-
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.rose-pine-cursor;
-    name = "Rose Pine";
-    size = 16;
-  };
-
-  gtk = {
-    enable = true;
-
-    theme = {
-      package = pkgs.rose-pine-gtk-theme;
-      name = "rose-pine";
-    };
-
-    iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
-    };
-
-    font = {
-      name = "Sans";
-      size = 11;
     };
   };
 

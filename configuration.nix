@@ -67,6 +67,7 @@
     zig
     nodejs_23
     python314
+    eza
   ];
 
   # # Configure keymap in X11

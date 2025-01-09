@@ -31,8 +31,8 @@
                 useGlobalPkgs = true;
                 extraSpecialArgs = { inherit inputs; };
 
-                users.pabloh = ./hosts/${hostname}/user.nix;
-                users.root = ./hosts/${hostname}/user.nix;
+                users.pabloh = ./hosts/${hostname};
+                users.root = ./hosts/${hostname};
               };
             }
           ];

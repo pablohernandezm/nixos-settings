@@ -1,5 +1,8 @@
 { pkgs, inputs, ... }:
 {
+  imports = [
+    ./hyprcursor.nix
+  ];
   programs.hyprland = {
     enable = true;
 
@@ -7,12 +10,6 @@
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     # withUWSM = true;
   };
-
-  # wayland.windowManager.hyprland = {
-  #   enable = true;
-  #   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-  #   # systemd.enable = false;
-  # };
 
   hardware.graphics = {
     enable = true;
