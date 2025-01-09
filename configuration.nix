@@ -68,6 +68,7 @@
     nodejs_23
     python314
     eza
+    go
   ];
 
   # # Configure keymap in X11
