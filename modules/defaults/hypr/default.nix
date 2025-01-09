@@ -29,7 +29,7 @@
   };
 
   environment.variables = {
-    UWSM_USE_SESSION_SLICE = true;
+    UWSM_USE_SESSION_SLICE = "true";
   };
 
   hardware.graphics = {
