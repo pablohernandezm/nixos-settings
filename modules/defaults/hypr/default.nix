@@ -28,18 +28,15 @@
     };
   };
 
+  environment.variables = {
+    UWSM_USE_SESSION_SLICE = true;
+  };
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
-
-  # environment.shellInit = ''
-  #   if uwsm check may-start; then
-  #     exec uwsm start hyprland.desktop
-  #   fi  
-  # '';
 
   services.displayManager.sddm = {
     enable = true;
@@ -48,24 +45,5 @@
     };
   };
 
-  # services.displayManager.sddm.wayland = true;
-  # services.xserver = {
-  #   enable = true;
-  #
-  #   displayManager = {
-  #     gdm = {
-  #       enable = true;
-  #       wayland = true;
-  #     };
-  #   };
-  #
-  #   videoDrivers = [
-  #     "amdgpu"
-  #   ];
-  # };
-
-  # services.displayManager.sessionPackages = [ pkgs.hyprland ];
-
-  # services.libinput.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
