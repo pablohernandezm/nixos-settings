@@ -11,6 +11,7 @@
     cursorTheme = {
       name = "BreezeX-RosePine-Linux";
       package = pkgs.rose-pine-cursor;
+      size = 32;
     };
 
     iconTheme = {

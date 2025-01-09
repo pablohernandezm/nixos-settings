@@ -2,6 +2,7 @@
 {
   imports = [
     ./hyprcursor.nix
+    ./hyprpolkitagent.nix
   ];
   programs.hyprland = {
     enable = true;
@@ -18,7 +19,6 @@
 
   environment.systemPackages = with pkgs; [
     kitty # required for default config
-    sway
   ];
 
 
@@ -42,7 +42,7 @@
     ];
   };
 
-  services.displayManager.sessionPackages = [ pkgs.sway ];
+  services.displayManager.sessionPackages = [ pkgs.hyprland ];
 
   services.libinput.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
